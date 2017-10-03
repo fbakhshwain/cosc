@@ -1,95 +1,115 @@
 
 <!DOCTYPE HTML>
+<?php
+session_start();
+if ($_SESSION['userIsLoggedin']){
+	   header( 'Location: http://localhost/cosc/welcome.php' ) ;
+}
+?>
 <html>
-<title>cosc4806 example</title>
+<title>cosc4806 loginCheck</title>
+
 <h1>welcome to the website</h1>
+
 <head>
- <a href="index.php">go back to home page</a>
-      <a href="aboutme.html">About Me</a>
-<form id='login' action='login.php' method='post' accept-charset='UTF-8'>
-	<fieldset>
-		<legend>Login</legend>
-
-
-		<label for='username'>UserName*:</label> <input type="text"
-			name=$userNameInput /> <label for='password'>Password*:</label> <input
-			type="password" name=$userPassInput />
-		<!--text  -->
-
-		<input type="submit" value="submit?" name="subButton" />
-	</fieldset>
-</form>
+<a href="index.php">go back to home page</a>
+<br>
+<a href="aboutme.php"target="_blank">About Me</a>
+<br>
 </head>
-<body>
-	<p>
-	<?php
-	global $securty_array;
-	$securty_array = array();
 
-	//$userNameInput= "fares";
-	//$userPassInput="1234";
-	$loginTries=0;
-	$DBName="fares";
-	$BDpassword="1234";
-	echo " welcome  <br> ";
-		if (isset($_POST['subButton'])){
-			
+<body>
+<?php
+///////////// inceate varuables /////////////////
+global $securty_array;
+$securty_array = array();
+
+//$userNameInput= "fares";
+//$userPassInput="1234";
+
+
+$DBName="fares";
+$BDpassword="1234";
+
+///////////////// calling the functions ////////////////
+if (isset($_POST['subButton'])){
 	$userNameInput = $_POST['$userNameInput'];
 	$userPassInput = $_POST['$userPassInput'];
-			$loginTries++;
-			echo "1 checking your data",$userNameInput ;
-			if (login($userNameInput,$userPassInput) ){
-			 echo "<br> Welcome Back ",   $DBName;
-			 }else {
-			 echo "<br>  please try again";
-			 }
-		}else {
-			echo "please enter your user name and password";
+	//incremntatin for trials
+	$_SESSION['$loginCheckTries']=$_SESSION['$loginCheckTries']+1;
+	echo '<br> you have entered "',$userNameInput,'".';
+	
+	if (loginCheck($userNameInput,$userPassInput) ){
+		// creatting sessions for the variables that we want to carry.
+		$_SESSION['currentUser'] = $userNameInput;
+		$_SESSION['currentPassWord'] =$userPassInput;
+		$_SESSION['userIsLoggedin'] = true;
+		
+		echo "<h4>, welcome back ",   $DBName,"</h4>";
+		echo '<br> <a href="http://localhost/cosc/welcome.php"><h1> go to prfile ?</h1></a>';
+		echo "<br>  you have tried to login ", $_SESSION['$loginCheckTries']," times <br/>";
+	}else{
+		showForm("<br>  please try again");
+	echo "<br>  you have tried to login ", $_SESSION['$loginCheckTries']," times <br/>";
+	}
+		
+}else showForm("please enter your user name and password to login"); 
+
+//////////// writing the functions /////////////////
+
+// user info checker.
+
+function loginCheck ($userNameInput,$userPassInput){
+	global $DBName;
+	global $BDpassword;
+
+	if ($userNameInput== $DBName){
+		if($userPassInput==$BDpassword) {
+			Echo "<br> <h4> Your info is correct</h4> ";
+			return true;
+			header('Location: http://localhost/cosc/welcome.php');
+		}else{
+			Echo "<br>  your password is wrong";
+			return false;
 		}
+	}else{
+		echo" <br>  your username is wrong";
+		return false;
+	}
 
-		function login ($userNameInput,$userPassInput){
-			global $DBName;
-			global $BDpassword;
+}
 
-			if ($userNameInput== $DBName){
-				if($userPassInput==$BDpassword)	{
-					Echo "<br>  your info is correct ";
-					return true;
-				}else{
-					Echo "<br>  your password is wrong";
-					return false;
-				}
-			}else{
-				echo" <br>  your user name is wrong";
-				return false;
-			}
 
-		}
-		echo "<br>  you have tried $loginTries times <br/>";
+// display the form with a msg.
 
-		?>
-	</p>
-</body>
+function showForm($msg){
+	echo $msg;
+	include 'form.php';
+}
+
+?>
+	
+
 
 </html>
 
-<?php
-/*
-//assigns the username and password
-$username = array("admin", "frank", "money");
-$password = array("password", "thepass", "test");
+<!--  
+ //assigns the username and password
+ $username = array("admin", "frank", "money");
+ $password = array("password", "thepass", "test");
 
-//reads the users input and assigns a name
-$user = $_POST['username'];
-$pass = $_POST['password'];
+ //reads the users input and assigns a name
+ $user = $_POST['username'];
+ $pass = $_POST['password'];
 
 
-//checks to see if the username and password are correct
-if($user == $username[count($username)] && $pass == $password[count($password)]) {
-    echo "welcome";
-}
-else {
-     echo "wrong input, try again ";
-}
+ //checks to see if the username and password are correct
+ if($user == $username[count($username)] && $pass == $password[count($password)]) {
+ echo "welcome";
+ }
+ else {
+ echo "wrong input, try again ";
+ }
 
-?> */
+ ?> */-->
+</body>

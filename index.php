@@ -1,15 +1,18 @@
 
 <!DOCTYPE HTML>
+<?php session_start();?>
 <html>
-<title>cosc4806 example</title>
- <a href="index.php">go back to home page</a>
-      <a href="aboutme.html">About Me</a>
-<h1>welcome to the website</h1>
+<title>cosc4806 </title>
+ <h1>welcome to the website</h1><br>
+      <a href="aboutme.php"target="_blank">About Me</a><br>
+
 	
-<form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+<form  action='login.php' method='post' accept-charset='UTF-8'>
  <fieldset>
- <legend>Login</legend>
-<input type='submit' name='Submit' value='login ?' />
+ <legend>Welcome</legend>
+ press the button to go to <strong> profile</strong>
+<input type='submit' name='Submit' value='Profile' />
  
 </fieldset>
 </form>
+<?php $_SESSION['$loginCheckTries']= 0;?>

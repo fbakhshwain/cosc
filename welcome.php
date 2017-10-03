@@ -1,47 +1,70 @@
 <!DOCTYPE html>
+<?php
+session_start();
+//that was just for testing
+ //echo $_SESSION['userIsLoggedin'];
+ if(isset($_POST['logout'])){
+$_SESSION['userIsLoggedin'] = false;
+ header( 'Location: http://localhost/cosc/index.php' ) ;
+}?>
 <html>
   <head>
     <title>welcome page </title>
   </head>
   <body>
     <nav>
-      <a href="index.php">go back to home page</a>
-      <a href="aboutme.html">About Me</a>
+
+ <form id='login' action='welcome.php' method='post' accept-charset='UTF-8'>
+	<fieldset>
+		<legend>Welcome</legend>
+<a href="index.php">Go back to home page </a>
+<span style="margin-left: 2em;">
+  <a href="aboutme.php"target="_blank"> About Me</a> 
+ </span>
+					 <span style="margin-left: 2em;">
+
+		<input type="submit" value="Logout?" name="logout" />
+		</span>
+	</fieldset>
+</form> 
+
+
+
     </nav>
-    <h1>welcome back<!-- ?php global $username?>--> </h1>
-        <img src="https://ih0.redbubble.net/image.149272353.6094/flat,800x800,075,f.u1.jpg"height="240" width="320" controls />
+   
+    <h1>welcome back <?php echo $_SESSION['currentUser'] ?> </h1>
+    <?php echo "Today is " . date("l")."  ". date("Y-m-d")?><br>
+       <br> <img src="https://ih0.redbubble.net/image.149272353.6094/flat,800x800,075,f.u1.jpg"height="240" width="320" controls />
     
     <nav>
       <ul>
-        <li><a href="#top">page top</a></li>
-        <li><a href="#center">center</a></li>
+        <li><a href="#top">personal info</a></li>
+        <li><a href="#center">assingment</a></li>
         <li><a href="#bottom">bottom</a></li>
       </ul>
     </nav>
     <div id="top">
-      <h2>this is a tria website</h2>
-      <p>The brown bear (<em>Ursus arctos</em>) is native to parts of northern Eurasia and North America. Its conservation status is currently <strong>Least Concern</strong>.<br /><br /> There are many subspecies within the brown bear species, including the Atlas bear and the Himalayan brown bear.</p>
-      <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">Learn More</a>
-      <h3>Species</h3>
+      <h2>User personal info</h2>
+      <p>your <em>user name </em> is (<strong> <?php echo $_SESSION['currentUser'] ?></strong> ), </br>
+       and your <em>password</em> is (<strong> <?php echo $_SESSION['currentPassWord']?></strong>.) </p><br>
+      <h3>Assingments</h3>
       <ol>
-        <li>Arctos</li>
-        <li>Collarus</li>
-        <li>Horribilis</li>
-        <li>Nelsoni (extinct)</li>
+        <li>first</li>
+        <li>second</li>
       </ol>
       <h3>Features</h3>
-      <p>Brown bears are not always completely brown. Some can be reddish or yellowish. They have very large, curved claws and huge paws. Male brown bears are often 30% larger than female brown bears. They can range from 5 feet to 9 feet from head to toe.</p>
+      <p>. havent added much yet.</p>
     </div>
     <div id="center">
       <h2>center</h2>
-      <h3>Countries with Large Brown Bear Populations</h3>
+      <h3>havent added much yet</h3>
       <ol>
-        <li>Russia</li>
-        <li>United States</li>
-        <li>Canada</li>
+        <li>this is a list :D</li>
+        <li>this is a list :D</li>
+        <li>this is a list :D</li>
       </ol>
-      <h3>Countries with Small Brown Bear Populations</h3>
-      <p>Some countries with smaller brown bear populations include Armenia, Belarus, Bulgaria, China, Finland, France, Greece, India, Japan, Nepal, Poland, Romania, Slovenia, Turkmenistan, and Uzbekistan.</p>
+      <h3>once again hanet added much yet</h3>
+      <p></p>
     </div>
     <div id="bottom">
       <h2>bottom</h2>

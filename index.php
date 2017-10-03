@@ -1,4 +1,8 @@
-<h1> welcome to the website </h1>
+
+<!DOCTYPE HTML>
+<html>
+<title>cosc4806 example</title>
+<h1>welcome to the website</h1>
 	<form id='login' action='login.php' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>Login</legend>

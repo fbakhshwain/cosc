@@ -5,7 +5,7 @@
   </head>
   <body>
     <nav>
-      <a href="index.html">Brown Bear</a>
+      <a href="index.php">go back to home page</a>
       <a href="aboutme.html">About Me</a>
     </nav>
     <h1>welcome back<!-- ?php global $username?>--> </h1>
@@ -19,7 +19,7 @@
       </ul>
     </nav>
     <div id="top">
-      <h2>About Brown Bears</h2>
+      <h2>this is a tria website</h2>
       <p>The brown bear (<em>Ursus arctos</em>) is native to parts of northern Eurasia and North America. Its conservation status is currently <strong>Least Concern</strong>.<br /><br /> There are many subspecies within the brown bear species, including the Atlas bear and the Himalayan brown bear.</p>
       <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">Learn More</a>
       <h3>Species</h3>

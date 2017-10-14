@@ -2,9 +2,7 @@
 <!DOCTYPE HTML>
 <?php
 session_start();
-if ($_SESSION['userIsLoggedin']){
-	   header( 'Location: http://localhost/cosc/welcome.php' ) ;
-}
+
 ?>
 <html>
 <title>cosc4806 loginCheck</title>
@@ -36,7 +34,6 @@ if (isset($_POST['subButton'])){
 	$userNameInput = $_POST['$userNameInput'];
 	$userPassInput = $_POST['$userPassInput'];
 	//incremntatin for trials
-	$_SESSION['$loginCheckTries']=$_SESSION['$loginCheckTries']+1;
 	echo '<br> you have entered "',$userNameInput,'".';
 	
 	if (loginCheck($userNameInput,$userPassInput) ){
@@ -48,12 +45,18 @@ if (isset($_POST['subButton'])){
 		echo "<h4>, welcome back ",   $DBName,"</h4>";
 		echo '<br> <a href="http://localhost/cosc/welcome.php"><h1> go to prfile ?</h1></a>';
 		echo "<br>  you have tried to login ", $_SESSION['$loginCheckTries']," times <br/>";
+		 header( 'Location: http://localhost/cosc/welcome.php' ) ;
 	}else{
+		$_SESSION['$loginCheckTries']=$_SESSION['$loginCheckTries']+1;
 		showForm("<br>  please try again");
 	echo "<br>  you have tried to login ", $_SESSION['$loginCheckTries']," times <br/>";
 	}
 		
 }else showForm("please enter your user name and password to login"); 
+
+if ($_SESSION['userIsLoggedin']){
+	   header( 'Location: http://localhost/cosc/welcome.php' ) ;
+}
 
 //////////// writing the functions /////////////////
 

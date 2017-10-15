@@ -251,6 +251,11 @@ padding-top:30px;
 	cursor: pointer; 
 	
 }
+.signup-form p{
+	 text-align: center;
+	 font-size: 14px;
+	 padding:7px 7px; 
+	}
 
 .signup-form button:hover{
 	background-color: #356fba; 

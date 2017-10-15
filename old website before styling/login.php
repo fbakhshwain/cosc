@@ -2,6 +2,11 @@
 <!DOCTYPE HTML>
 <?php
 session_start();
+session_start();
+$_SESSION['respodMSG'];
+if ($_SESSION['userIsLoggedin']){
+	   header( 'Location: http://localhost/cosc/welcome.php' ) ;
+}
 
 ?>
 <html>
@@ -21,9 +26,6 @@ session_start();
 ///////////// inceate varuables /////////////////
 global $securty_array;
 $securty_array = array();
-
-//$userNameInput= "fares";
-//$userPassInput="1234";
 
 
 $DBName="fares";
@@ -54,9 +56,6 @@ if (isset($_POST['subButton'])){
 		
 }else showForm("please enter your user name and password to login"); 
 
-if ($_SESSION['userIsLoggedin']){
-	   header( 'Location: http://localhost/cosc/welcome.php' ) ;
-}
 
 //////////// writing the functions /////////////////
 

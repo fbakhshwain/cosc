@@ -4,8 +4,12 @@ session_start();
 //that was just for testing
  //echo $_SESSION['userIsLoggedin'];
  if(isset($_POST['logout'])){
-//$_SESSION['userIsLoggedin'] = false;
-session_destroy();
+$_SESSION['userIsLoggedin'] = false;
+// remove all session variables
+session_unset(); 
+
+// destroy the session 
+session_destroy(); 
  header( 'Location: http://localhost/cosc/index.php' ) ;
 }?>
 <html>

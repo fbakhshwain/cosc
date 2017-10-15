@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +16,10 @@
 				<li><a href="aboutme.php">ABOUT ME</a></li>
 			</ul>
 			<div class="nav-login">
-				<form>
-					<label for='username'>UserName:</label> <input type="text"
-						name="uid" placeholder="username or E-mail"> <label for='password'>Password:</label>
+				<form action="include/login-inc.php" method="POST">
+					<label for='username'>UserName:</label> 
+					<input type="text" name="uid" placeholder="username or E-mail">
+					 <label for='password'>Password:</label>
 					<input type="password" name="pwd" placeholder="Password">
 					<button type="submit" name="submit">login!</button>
 				</form>

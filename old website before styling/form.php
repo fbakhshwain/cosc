@@ -5,11 +5,8 @@
 		<legend>Login</legend>
 
 
-			<label for='username'>UserName*:</label> 
-			<input type="text"
-			name=$userNameInput /> 
-			<label for='password'>Password*:</label> 
-			<input
+		<label for='username'>UserName*:</label> <input type="text"
+			name=$userNameInput /> <label for='password'>Password*:</label> <input
 			type="text" name=$userPassInput />
 		<!--type can = password-->
 

@@ -1,0 +1,1 @@
+<div >Method not found123. <?php echo $method ?></div>

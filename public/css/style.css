@@ -1,0 +1,202 @@
+/* 
+this reset stylesheet i copied from html5doctor.com 
+
+*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+img {max-width:100%}
+html, body{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	font-family: arial;}
+ul {
+	list-style-type: none; margin: 0;
+    padding: 0
+}`
+nav ul {
+	list-style-type: none; margin: 0;
+    padding: 0
+}
+
+
+
+body {
+	background: #dee;
+}
+
+
+.tlSubmit:hover {background:#6c8f9a;}
+.tlSubmit {
+    background: #007aa0;
+    outline: none;
+    border: none;
+	border-bottom:4px solid #284048;
+	margin-top:30px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+	text-align:center;
+	font-size:16px;
+	
+	}
+
+.content-container { padding:30px; background: #fff; min-height:510px;}
+.login_form, .signup-form {
+	
+    margin:30px auto;
+    border: 1px solid #a1d8e0;
+    background: #fff;
+    padding: 20px 15px;
+	background: #f0f6f6;
+}
+
+.login_form h2,.signup-form h2{font-size:28px; margin:0; margin-bottom:20px; padding-bottom:5px; border-bottom:1px dashed #007aa0}
+.tlFull {width:100%;}
+.tlHalf {width:50%; float:left}
+.signup-form .tlFull, .login_form .tlFull {    margin-bottom: 10px;}
+
+.signup-form .tlFull span, .login_form .tlFull span{color:red;}
+.login_form .tlFull .tlSubmit a {color:#fff;}
+.signup-form input,.signup-form select,.signup-form textarea, .login_form input {width: 100%;
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;     
+	border: 1px solid #a1d8e0;}
+
+/* CSS for Content Area Starts */
+.content-wrap{
+	padding:20px;
+	height:auto;
+	background:#fff;
+}
+.content-wrap.mar_bottom{margin-bottom:105px}
+.content-wrap .content{
+	width:100%;
+	 padding:25px;
+}
+
+.content-wrap aside{
+	padding-right:10px;
+	width:100%;
+}
+.wel-heading{text-align:center; padding:20px}
+.wel-heading h2, .wel-heading h3 {margin:0; padding:0;}
+.clearfix {clear:both;}
+
+.footer{    width:100%; background-color: #a1d8e0;
+    height: 70px;
+    line-height: 70px;
+	}
+.copy_right{text-align:center; color: #103f7c;font-weight: bold;}
+
+.viewNotes {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	border-radius:5px;
+    overflow: hidden;
+}
+
+.viewNotes td, .viewNotes th {
+      text-align:center;
+    padding: 8px;
+	
+}
+
+.viewNotes tr:nth-child(even){background-color: #f2f2f2;}
+
+.viewNotes tr:hover {background-color: #ddd;}
+.viewNotes tr{border-bottom:1px solid #ccc}
+
+.viewNotes th {
+	
+    background:#007aa0;
+    color: white;
+}
+.errorMsg{
+	background: #ddeeee;
+    padding: 10px 15px;
+    display: inline-block;
+    clear: both;
+    border-radius: 5px;
+    font-weight: 600;
+	}
+.errorMsg.error{background: red; color:#fff;}
+.errorMsg.success{background: green;}
+
+
+ul.social-buttons li a {
+    display: block;
+    background-color: #222;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    font-size:14px;
+    line-height: 30px;
+    color: #fff;
+    outline: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+	color:#fff
+}
+.list-inline.quicklinks a{
+    
+	color:#fff;
+	font-size:16px;
+}
+footer {
+    padding: 5px 0;
+    text-align: center;
+	background: #007aa0;
+}
+
+#mainNav {
+    padding: 10px 0;
+	background: #007aa0;
+}
+#mainNav a{
+    color:#fff
+}
+
+.sidebar li{background:linear-gradient(to bottom, #007aa0 0%,#0693bf 50%,#1799cb 100%);margin-bottom:1px}
+.sidebar li a{text-decoration: none;
+    color: #fff;
+    padding: 10px 12px;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;}
+.sidebar li a:hover{background:#007aa0}
+
+.copyright{color:#fff;font-size:16px;text-transform:capitalize}
+.nav li a{text-transform:capitalize;font-size:18px}
+.navbar-header.page-scroll a{font-size:20px}
+.footer_content{padding:5px}
+
+ul.social-buttons li a:hover{background: #337ab7;}
+.tlSubmit.tl_submit2{padding:12px}
+.viewNotes td{border-right:1px solid #ccc}
+.viewNotes td:last-child{border-right:0}
+.navbar-default .navbar-toggle {
+color: #fff;}
+.content-container{margin-top:40px}
+.wel-heading{min-height:425px}
